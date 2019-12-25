@@ -1,0 +1,7 @@
+contrib/dump-asy.pl usr/share/doc/i3-gaps/examples/
+contrib/gtk-tree-watch.pl usr/share/doc/i3-gaps/examples/
+contrib/i3-wsbar usr/share/doc/i3-gaps/examples/
+contrib/per-workspace-layout.pl usr/share/doc/i3-gaps/examples/
+contrib/trivial-bar-script.sh usr/share/doc/i3-gaps/examples/
+debian/tmp/etc
+debian/tmp/usr

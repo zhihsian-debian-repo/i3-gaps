@@ -1,0 +1,58 @@
+Source: i3-gaps
+Section: x11
+Priority: optional
+Maintainer: Zhihsian Que <i@zhihsian.me>
+Build-Depends:
+ asciidoc (>= 8.4.4),
+ autotools-dev,
+ debhelper-compat (= 12),
+ docbook-xml,
+ libcairo2-dev (>= 1.14.4),
+ libev-dev (>= 1:4.04),
+ libpango1.0-dev,
+ libpcre3-dev (>= 1:8.10),
+ libpod-simple-perl,
+ libstartup-notification0-dev (>= 0.10),
+ libx11-dev,
+ libxcb-cursor-dev,
+ libxcb-icccm4-dev,
+ libxcb-keysyms1-dev,
+ libxcb-randr0-dev,
+ libxcb-shape0-dev,
+ libxcb-util0-dev (>= 0.3.8),
+ libxcb-xinerama0-dev (>= 1.1),
+ libxcb-xkb-dev,
+ libxcb-xrm-dev,
+ libxkbcommon-dev (>= 0.4.0),
+ libxkbcommon-x11-dev (>= 0.4.0),
+ libyajl-dev (>= 2.0.4),
+ pkg-config,
+ xmlto,
+Standards-Version: 4.4.1
+Homepage: https://github.com/Airblader/i3
+Vcs-Browser: https://github.com/zhihsian-debian-repo/i3-gaps
+Vcs-Git: https://github.com/zhihsian-debian-repo/i3-gaps.git
+
+Package: i3-gaps
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${perl:Depends},
+ ${shlibs:Depends},
+Provides:
+ x-window-manager,
+Recommends: xfonts-base, fonts-dejavu-core, libanyevent-i3-perl (>= 0.12), libjson-xs-perl, rxvt-unicode | x-terminal-emulator
+Description: A fork of i3wm
+ A tiling window manager for X11. It is kept up to date
+ with upstream, adding a few additional features such as
+ gaps between windows.
+
+Package: i3-gaps-dbg
+Architecture: any
+Section: debug
+Depends:
+ i3-gaps (=${binary:Version}),
+ ${misc:Depends},
+Description: Debugging symbols for the i3-gaps
+ Debugging symbols for the i3-gaps. Please install this to produce
+ useful backtraces before creating new tickets.
