@@ -1,3 +1,9 @@
+i3-gaps (4.18.1-1) unstable; urgency=medium
+
+  * release i3-gaps 4.18.1
+
+ -- Zhihsian Que <i@zhihsian.me>  Sun, 7 Jun 2020 20:30:02 +0800
+
 i3-gaps (4.17.1-1) unstable; urgency=medium
 
   * Initial release
