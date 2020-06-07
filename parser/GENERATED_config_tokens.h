@@ -20,24 +20,31 @@ static cmdp_token tokens_FLOATING_MINIMUM_SIZE_WIDTH[1] = {
 static cmdp_token tokens_BAR_BINDING_MODE_INDICATOR[1] = {
     { "word", "value", __CALL, { 4 } },
 };
+static cmdp_token tokens_BAR_WORKSPACE_MIN_WIDTH_PX[2] = {
+    { "'px", "", BAR_WORKSPACE_MIN_WIDTH_PX, { 0 } },
+    { "end", "", __CALL, { 5 } },
+};
 static cmdp_token tokens_FOCUS_ON_WINDOW_ACTIVATION[1] = {
-    { "word", "mode", __CALL, { 5 } },
+    { "word", "mode", __CALL, { 6 } },
 };
 static cmdp_token tokens_FORCE_DISPLAY_URGENCY_HINT[1] = {
     { "number", "duration_ms", FORCE_DISPLAY_URGENCY_HINT_MS, { 0 } },
 };
 static cmdp_token tokens_BAR_STRIP_WORKSPACE_NAME[1] = {
-    { "word", "value", __CALL, { 6 } },
+    { "word", "value", __CALL, { 7 } },
 };
 static cmdp_token tokens_DEFAULT_BORDER_PIXELS_PX[2] = {
     { "'px", "", DEFAULT_BORDER_PIXELS_PX, { 0 } },
-    { "end", "", __CALL, { 7 } },
+    { "end", "", __CALL, { 8 } },
 };
 static cmdp_token tokens_WORKSPACE_BACK_AND_FORTH[1] = {
-    { "word", "value", __CALL, { 8 } },
+    { "word", "value", __CALL, { 9 } },
 };
 static cmdp_token tokens_ASSIGN_WORKSPACE_NUMBER[1] = {
-    { "string", "number", __CALL, { 9 } },
+    { "string", "number", __CALL, { 10 } },
+};
+static cmdp_token tokens_BAR_WORKSPACE_MIN_WIDTH[1] = {
+    { "number", "width", BAR_WORKSPACE_MIN_WIDTH_PX, { 0 } },
 };
 static cmdp_token tokens_FLOATING_MAXIMUM_SIZE_X[1] = {
     { "'x", "", FLOATING_MAXIMUM_SIZE_HEIGHT, { 0 } },
@@ -46,9 +53,9 @@ static cmdp_token tokens_FLOATING_MINIMUM_SIZE_X[1] = {
     { "'x", "", FLOATING_MINIMUM_SIZE_HEIGHT, { 0 } },
 };
 static cmdp_token tokens_POPUP_DURING_FULLSCREEN[3] = {
-    { "'ignore", "value", __CALL, { 10 } },
-    { "'leave_fullscreen", "value", __CALL, { 11 } },
-    { "'smart", "value", __CALL, { 12 } },
+    { "'ignore", "value", __CALL, { 11 } },
+    { "'leave_fullscreen", "value", __CALL, { 12 } },
+    { "'smart", "value", __CALL, { 13 } },
 };
 static cmdp_token tokens_BAR_COLORS_IGNORE_LINE[1] = {
     { "line", "", BAR_COLORS, { 0 } },
@@ -57,56 +64,56 @@ static cmdp_token tokens_BAR_COLORS_BACKGROUND[1] = {
     { "word", "background", BAR_COLORS_TEXT, { 0 } },
 };
 static cmdp_token tokens_BAR_WORKSPACE_BUTTONS[1] = {
-    { "word", "value", __CALL, { 13 } },
+    { "word", "value", __CALL, { 14 } },
 };
 static cmdp_token tokens_DEFAULT_BORDER_PIXELS[2] = {
-    { "end", "", __CALL, { 14 } },
+    { "end", "", __CALL, { 15 } },
     { "number", "width", DEFAULT_BORDER_PIXELS_PX, { 0 } },
 };
 static cmdp_token tokens_WORKSPACE_OUTPUT_WORD[2] = {
-    { "word", "output", __CALL, { 15 } },
+    { "word", "output", __CALL, { 16 } },
     { "end", "", INITIAL, { 0 } },
 };
 static cmdp_token tokens_BAR_SEPARATOR_SYMBOL[1] = {
-    { "string", "separator", __CALL, { 16 } },
+    { "string", "separator", __CALL, { 17 } },
 };
 static cmdp_token tokens_FORCE_FOCUS_WRAPPING[1] = {
-    { "word", "value", __CALL, { 17 } },
+    { "word", "value", __CALL, { 18 } },
 };
 static cmdp_token tokens_BAR_BINDSYM_COMMAND[2] = {
     { "'--release", "release", BAR_BINDSYM_COMMAND, { 0 } },
-    { "string", "command", __CALL, { 18 } },
+    { "string", "command", __CALL, { 19 } },
 };
 static cmdp_token tokens_BAR_TRAY_PADDING_PX[2] = {
     { "'px", "", BAR_TRAY_PADDING_PX, { 0 } },
-    { "end", "", __CALL, { 19 } },
+    { "end", "", __CALL, { 20 } },
 };
 static cmdp_token tokens_DEFAULT_ORIENTATION[3] = {
-    { "'horizontal", "orientation", __CALL, { 20 } },
-    { "'vertical", "orientation", __CALL, { 21 } },
-    { "'auto", "orientation", __CALL, { 22 } },
+    { "'horizontal", "orientation", __CALL, { 21 } },
+    { "'vertical", "orientation", __CALL, { 22 } },
+    { "'auto", "orientation", __CALL, { 23 } },
 };
 static cmdp_token tokens_FOCUS_FOLLOWS_MOUSE[1] = {
-    { "word", "value", __CALL, { 23 } },
+    { "word", "value", __CALL, { 24 } },
 };
 static cmdp_token tokens_BAR_STATUS_COMMAND[1] = {
-    { "string", "command", __CALL, { 24 } },
-};
-static cmdp_token tokens_BAR_WHEEL_DOWN_CMD[1] = {
     { "string", "command", __CALL, { 25 } },
 };
+static cmdp_token tokens_BAR_WHEEL_DOWN_CMD[1] = {
+    { "string", "command", __CALL, { 26 } },
+};
 static cmdp_token tokens_COLOR_CHILD_BORDER[2] = {
-    { "word", "child_border", __CALL, { 26 } },
-    { "end", "", __CALL, { 27 } },
+    { "word", "child_border", __CALL, { 27 } },
+    { "end", "", __CALL, { 28 } },
 };
 static cmdp_token tokens_FOR_WINDOW_COMMAND[1] = {
-    { "string", "command", __CALL, { 28 } },
+    { "string", "command", __CALL, { 29 } },
 };
 static cmdp_token tokens_BAR_COLORS_BORDER[1] = {
     { "word", "border", BAR_COLORS_BACKGROUND, { 0 } },
 };
 static cmdp_token tokens_BAR_COLORS_SINGLE[1] = {
-    { "word", "color", __CALL, { 29 } },
+    { "word", "color", __CALL, { 30 } },
 };
 static cmdp_token tokens_FLOATING_MODIFIER[10] = {
     { "'Mod1", "modifiers", FLOATING_MODIFIER, { 0 } },
@@ -118,21 +125,21 @@ static cmdp_token tokens_FLOATING_MODIFIER[10] = {
     { "'Control", "modifiers", FLOATING_MODIFIER, { 0 } },
     { "'Ctrl", "modifiers", FLOATING_MODIFIER, { 0 } },
     { "'+", "", FLOATING_MODIFIER, { 0 } },
-    { "end", "", __CALL, { 30 } },
+    { "end", "", __CALL, { 31 } },
 };
 static cmdp_token tokens_HIDE_EDGE_BORDERS[12] = {
-    { "'none", "hide_borders", __CALL, { 31 } },
-    { "'vertical", "hide_borders", __CALL, { 32 } },
-    { "'horizontal", "hide_borders", __CALL, { 33 } },
-    { "'both", "hide_borders", __CALL, { 34 } },
-    { "'smart_no_gaps", "hide_borders", __CALL, { 35 } },
-    { "'smart", "hide_borders", __CALL, { 36 } },
-    { "'1", "hide_borders", __CALL, { 37 } },
-    { "'yes", "hide_borders", __CALL, { 38 } },
-    { "'true", "hide_borders", __CALL, { 39 } },
-    { "'on", "hide_borders", __CALL, { 40 } },
-    { "'enable", "hide_borders", __CALL, { 41 } },
-    { "'active", "hide_borders", __CALL, { 42 } },
+    { "'none", "hide_borders", __CALL, { 32 } },
+    { "'vertical", "hide_borders", __CALL, { 33 } },
+    { "'horizontal", "hide_borders", __CALL, { 34 } },
+    { "'both", "hide_borders", __CALL, { 35 } },
+    { "'smart_no_gaps", "hide_borders", __CALL, { 36 } },
+    { "'smart", "hide_borders", __CALL, { 37 } },
+    { "'1", "hide_borders", __CALL, { 38 } },
+    { "'yes", "hide_borders", __CALL, { 39 } },
+    { "'true", "hide_borders", __CALL, { 40 } },
+    { "'on", "hide_borders", __CALL, { 41 } },
+    { "'enable", "hide_borders", __CALL, { 42 } },
+    { "'active", "hide_borders", __CALL, { 43 } },
 };
 static cmdp_token tokens_WORKSPACE_COMMAND[2] = {
     { "'output", "", WORKSPACE_OUTPUT_WORD, { 0 } },
@@ -143,119 +150,120 @@ static cmdp_token tokens_ASSIGN_WORKSPACE[5] = {
     { "'output", "", ASSIGN_OUTPUT, { 0 } },
     { "'workspace", "", ASSIGN_WORKSPACE, { 0 } },
     { "'number", "", ASSIGN_WORKSPACE_NUMBER, { 0 } },
-    { "string", "workspace", __CALL, { 43 } },
+    { "string", "workspace", __CALL, { 44 } },
 };
 static cmdp_token tokens_BAR_COLORS_BRACE[2] = {
     { "end", "", BAR_COLORS_BRACE, { 0 } },
     { "'{", "", BAR_COLORS, { 0 } },
 };
 static cmdp_token tokens_BAR_HIDDEN_STATE[2] = {
-    { "'hide", "hidden_state", __CALL, { 44 } },
-    { "'show", "hidden_state", __CALL, { 45 } },
+    { "'hide", "hidden_state", __CALL, { 45 } },
+    { "'show", "hidden_state", __CALL, { 46 } },
 };
 static cmdp_token tokens_BAR_TRAY_PADDING[1] = {
     { "number", "padding_px", BAR_TRAY_PADDING_PX, { 0 } },
 };
 static cmdp_token tokens_BAR_WHEEL_UP_CMD[1] = {
-    { "string", "command", __CALL, { 46 } },
+    { "string", "command", __CALL, { 47 } },
 };
 static cmdp_token tokens_COLOR_BACKGROUND[1] = {
     { "word", "background", COLOR_TEXT, { 0 } },
 };
 static cmdp_token tokens_IPC_KILL_TIMEOUT[1] = {
-    { "number", "timeout", __CALL, { 47 } },
+    { "number", "timeout", __CALL, { 48 } },
 };
 static cmdp_token tokens_MODE_BINDCOMMAND[5] = {
     { "'--release", "release", MODE_BINDCOMMAND, { 0 } },
     { "'--border", "border", MODE_BINDCOMMAND, { 0 } },
     { "'--whole-window", "whole_window", MODE_BINDCOMMAND, { 0 } },
     { "'--exclude-titlebar", "exclude_titlebar", MODE_BINDCOMMAND, { 0 } },
-    { "string", "command", __CALL, { 48 } },
+    { "string", "command", __CALL, { 49 } },
 };
 static cmdp_token tokens_MODE_IGNORE_LINE[1] = {
     { "line", "", MODE, { 0 } },
 };
 static cmdp_token tokens_WORKSPACE_LAYOUT[4] = {
-    { "'default", "layout", __CALL, { 49 } },
-    { "'stacking", "layout", __CALL, { 50 } },
-    { "'stacked", "layout", __CALL, { 51 } },
-    { "'tabbed", "layout", __CALL, { 52 } },
+    { "'default", "layout", __CALL, { 50 } },
+    { "'stacking", "layout", __CALL, { 51 } },
+    { "'stacked", "layout", __CALL, { 52 } },
+    { "'tabbed", "layout", __CALL, { 53 } },
 };
 static cmdp_token tokens_BAR_BAR_COMMAND[1] = {
-    { "string", "command", __CALL, { 53 } },
+    { "string", "command", __CALL, { 54 } },
 };
 static cmdp_token tokens_BAR_COLORS_TEXT[2] = {
-    { "end", "", __CALL, { 54 } },
-    { "word", "text", __CALL, { 55 } },
+    { "end", "", __CALL, { 55 } },
+    { "word", "text", __CALL, { 56 } },
 };
 static cmdp_token tokens_BAR_IGNORE_LINE[1] = {
     { "line", "", BAR, { 0 } },
 };
 static cmdp_token tokens_BAR_SOCKET_PATH[1] = {
-    { "string", "path", __CALL, { 56 } },
+    { "string", "path", __CALL, { 57 } },
 };
 static cmdp_token tokens_BAR_TRAY_OUTPUT[1] = {
-    { "word", "output", __CALL, { 57 } },
+    { "word", "output", __CALL, { 58 } },
 };
 static cmdp_token tokens_COLOR_INDICATOR[2] = {
     { "word", "indicator", COLOR_CHILD_BORDER, { 0 } },
-    { "end", "", __CALL, { 58 } },
+    { "end", "", __CALL, { 59 } },
 };
 static cmdp_token tokens_DISABLE_RANDR15[1] = {
-    { "word", "value", __CALL, { 59 } },
+    { "word", "value", __CALL, { 60 } },
 };
 static cmdp_token tokens_GAPS_WITH_SCOPE[1] = {
-    { "number", "value", __CALL, { 60 } },
+    { "number", "value", __CALL, { 61 } },
 };
 static cmdp_token tokens_DEFAULT_BORDER[4] = {
     { "'normal", "border", DEFAULT_BORDER_PIXELS, { 0 } },
     { "'pixel", "border", DEFAULT_BORDER_PIXELS, { 0 } },
-    { "'1pixel", "border", __CALL, { 61 } },
-    { "'none", "border", __CALL, { 62 } },
+    { "'1pixel", "border", __CALL, { 62 } },
+    { "'none", "border", __CALL, { 63 } },
 };
-static cmdp_token tokens_FOCUS_WRAPPING[13] = {
-    { "'1", "value", __CALL, { 63 } },
-    { "'yes", "value", __CALL, { 64 } },
-    { "'true", "value", __CALL, { 65 } },
-    { "'on", "value", __CALL, { 66 } },
-    { "'enable", "value", __CALL, { 67 } },
-    { "'active", "value", __CALL, { 68 } },
-    { "'0", "value", __CALL, { 69 } },
-    { "'no", "value", __CALL, { 70 } },
-    { "'false", "value", __CALL, { 71 } },
-    { "'off", "value", __CALL, { 72 } },
-    { "'disable", "value", __CALL, { 73 } },
-    { "'inactive", "value", __CALL, { 74 } },
-    { "'force", "value", __CALL, { 75 } },
+static cmdp_token tokens_FOCUS_WRAPPING[14] = {
+    { "'1", "value", __CALL, { 64 } },
+    { "'yes", "value", __CALL, { 65 } },
+    { "'true", "value", __CALL, { 66 } },
+    { "'on", "value", __CALL, { 67 } },
+    { "'enable", "value", __CALL, { 68 } },
+    { "'active", "value", __CALL, { 69 } },
+    { "'0", "value", __CALL, { 70 } },
+    { "'no", "value", __CALL, { 71 } },
+    { "'false", "value", __CALL, { 72 } },
+    { "'off", "value", __CALL, { 73 } },
+    { "'disable", "value", __CALL, { 74 } },
+    { "'inactive", "value", __CALL, { 75 } },
+    { "'force", "value", __CALL, { 76 } },
+    { "'workspace", "value", __CALL, { 77 } },
 };
 static cmdp_token tokens_FORCE_XINERAMA[1] = {
-    { "word", "value", __CALL, { 76 } },
+    { "word", "value", __CALL, { 78 } },
 };
 static cmdp_token tokens_ASSIGN_OUTPUT[1] = {
-    { "string", "output", __CALL, { 77 } },
+    { "string", "output", __CALL, { 79 } },
 };
 static cmdp_token tokens_CRITERION_STR[1] = {
-    { "word", "cvalue", __CALL, { 78 } },
+    { "word", "cvalue", __CALL, { 80 } },
 };
 static cmdp_token tokens_MOUSE_WARPING[2] = {
-    { "'none", "value", __CALL, { 79 } },
-    { "'output", "value", __CALL, { 80 } },
+    { "'none", "value", __CALL, { 81 } },
+    { "'output", "value", __CALL, { 82 } },
 };
 static cmdp_token tokens_RESTART_STATE[1] = {
-    { "string", "path", __CALL, { 81 } },
+    { "string", "path", __CALL, { 83 } },
 };
 static cmdp_token tokens_SMART_BORDERS[7] = {
-    { "'1", "enabled", __CALL, { 82 } },
-    { "'yes", "enabled", __CALL, { 83 } },
-    { "'true", "enabled", __CALL, { 84 } },
-    { "'on", "enabled", __CALL, { 85 } },
-    { "'enable", "enabled", __CALL, { 86 } },
-    { "'active", "enabled", __CALL, { 87 } },
-    { "'no_gaps", "enabled", __CALL, { 88 } },
+    { "'1", "enabled", __CALL, { 84 } },
+    { "'yes", "enabled", __CALL, { 85 } },
+    { "'true", "enabled", __CALL, { 86 } },
+    { "'on", "enabled", __CALL, { 87 } },
+    { "'enable", "enabled", __CALL, { 88 } },
+    { "'active", "enabled", __CALL, { 89 } },
+    { "'no_gaps", "enabled", __CALL, { 90 } },
 };
 static cmdp_token tokens_BAR_MODIFIER[12] = {
-    { "'off", "", __CALL, { 89 } },
-    { "'none", "", __CALL, { 90 } },
+    { "'off", "", __CALL, { 91 } },
+    { "'none", "", __CALL, { 92 } },
     { "'Mod1", "modifiers", BAR_MODIFIER, { 0 } },
     { "'Mod2", "modifiers", BAR_MODIFIER, { 0 } },
     { "'Mod3", "modifiers", BAR_MODIFIER, { 0 } },
@@ -265,20 +273,20 @@ static cmdp_token tokens_BAR_MODIFIER[12] = {
     { "'Control", "modifiers", BAR_MODIFIER, { 0 } },
     { "'Ctrl", "modifiers", BAR_MODIFIER, { 0 } },
     { "'+", "", BAR_MODIFIER, { 0 } },
-    { "end", "", __CALL, { 91 } },
+    { "end", "", __CALL, { 93 } },
 };
 static cmdp_token tokens_BAR_POSITION[2] = {
-    { "'top", "position", __CALL, { 92 } },
-    { "'bottom", "position", __CALL, { 93 } },
+    { "'top", "position", __CALL, { 94 } },
+    { "'bottom", "position", __CALL, { 95 } },
 };
 static cmdp_token tokens_COLOR_BORDER[1] = {
     { "word", "border", COLOR_BACKGROUND, { 0 } },
 };
 static cmdp_token tokens_COLOR_SINGLE[1] = {
-    { "word", "color", __CALL, { 94 } },
+    { "word", "color", __CALL, { 96 } },
 };
 static cmdp_token tokens_FAKE_OUTPUTS[1] = {
-    { "string", "outputs", __CALL, { 95 } },
+    { "string", "outputs", __CALL, { 97 } },
 };
 static cmdp_token tokens_MODE_BINDING[20] = {
     { "'--release", "release", MODE_BINDING, { 0 } },
@@ -303,29 +311,29 @@ static cmdp_token tokens_MODE_BINDING[20] = {
     { "word", "key", MODE_BINDCOMMAND, { 0 } },
 };
 static cmdp_token tokens_NO_FOCUS_END[1] = {
-    { "end", "", __CALL, { 96 } },
+    { "end", "", __CALL, { 98 } },
 };
 static cmdp_token tokens_BAR_BINDSYM[2] = {
     { "'--release", "release", BAR_BINDSYM, { 0 } },
     { "word", "button", BAR_BINDSYM_COMMAND, { 0 } },
 };
 static cmdp_token tokens_BAR_VERBOSE[1] = {
-    { "word", "value", __CALL, { 97 } },
+    { "word", "value", __CALL, { 99 } },
 };
 static cmdp_token tokens_BINDCOMMAND[5] = {
     { "'--release", "release", BINDCOMMAND, { 0 } },
     { "'--border", "border", BINDCOMMAND, { 0 } },
     { "'--whole-window", "whole_window", BINDCOMMAND, { 0 } },
     { "'--exclude-titlebar", "exclude_titlebar", BINDCOMMAND, { 0 } },
-    { "string", "command", __CALL, { 98 } },
+    { "string", "command", __CALL, { 100 } },
 };
 static cmdp_token tokens_IGNORE_LINE[1] = {
     { "line", "", INITIAL, { 0 } },
 };
 static cmdp_token tokens_TITLE_ALIGN[3] = {
-    { "'left", "alignment", __CALL, { 99 } },
-    { "'center", "alignment", __CALL, { 100 } },
-    { "'right", "alignment", __CALL, { 101 } },
+    { "'left", "alignment", __CALL, { 101 } },
+    { "'center", "alignment", __CALL, { 102 } },
+    { "'right", "alignment", __CALL, { 103 } },
 };
 static cmdp_token tokens_BAR_COLORS[15] = {
     { "end", "", BAR_COLORS, { 0 } },
@@ -345,31 +353,31 @@ static cmdp_token tokens_BAR_COLORS[15] = {
     { "'}", "", BAR, { 0 } },
 };
 static cmdp_token tokens_BAR_HEIGHT[1] = {
-    { "number", "value", __CALL, { 102 } },
+    { "number", "value", __CALL, { 104 } },
 };
 static cmdp_token tokens_BAR_OUTPUT[1] = {
-    { "string", "output", __CALL, { 103 } },
+    { "string", "output", __CALL, { 105 } },
 };
 static cmdp_token tokens_COLOR_TEXT[1] = {
     { "word", "text", COLOR_INDICATOR, { 0 } },
 };
 static cmdp_token tokens_FOR_WINDOW[1] = {
-    { "'[", "", __CALL, { 104 } },
+    { "'[", "", __CALL, { 106 } },
 };
 static cmdp_token tokens_IPC_SOCKET[1] = {
-    { "string", "path", __CALL, { 105 } },
+    { "string", "path", __CALL, { 107 } },
 };
 static cmdp_token tokens_SHOW_MARKS[1] = {
-    { "word", "value", __CALL, { 106 } },
+    { "word", "value", __CALL, { 108 } },
 };
 static cmdp_token tokens_SMART_GAPS[7] = {
-    { "'1", "enabled", __CALL, { 107 } },
-    { "'yes", "enabled", __CALL, { 108 } },
-    { "'true", "enabled", __CALL, { 109 } },
-    { "'on", "enabled", __CALL, { 110 } },
-    { "'enable", "enabled", __CALL, { 111 } },
-    { "'active", "enabled", __CALL, { 112 } },
-    { "'inverse_outer", "enabled", __CALL, { 113 } },
+    { "'1", "enabled", __CALL, { 109 } },
+    { "'yes", "enabled", __CALL, { 110 } },
+    { "'true", "enabled", __CALL, { 111 } },
+    { "'on", "enabled", __CALL, { 112 } },
+    { "'enable", "enabled", __CALL, { 113 } },
+    { "'active", "enabled", __CALL, { 114 } },
+    { "'inverse_outer", "enabled", __CALL, { 115 } },
 };
 static cmdp_token tokens_CRITERION[1] = {
     { "'=", "", CRITERION_STR, { 0 } },
@@ -383,15 +391,15 @@ static cmdp_token tokens_WORKSPACE[1] = {
 };
 static cmdp_token tokens_BARBRACE[2] = {
     { "end", "", BARBRACE, { 0 } },
-    { "'{", "", __CALL, { 114 } },
+    { "'{", "", __CALL, { 116 } },
 };
 static cmdp_token tokens_BAR_FONT[1] = {
-    { "string", "font", __CALL, { 115 } },
+    { "string", "font", __CALL, { 117 } },
 };
 static cmdp_token tokens_BAR_MODE[3] = {
-    { "'dock", "mode", __CALL, { 116 } },
-    { "'hide", "mode", __CALL, { 117 } },
-    { "'invisible", "mode", __CALL, { 118 } },
+    { "'dock", "mode", __CALL, { 118 } },
+    { "'hide", "mode", __CALL, { 119 } },
+    { "'invisible", "mode", __CALL, { 120 } },
 };
 static cmdp_token tokens_CRITERIA[13] = {
     { "'class", "ctype", CRITERION, { 0 } },
@@ -404,16 +412,16 @@ static cmdp_token tokens_CRITERIA[13] = {
     { "'title", "ctype", CRITERION, { 0 } },
     { "'urgent", "ctype", CRITERION, { 0 } },
     { "'workspace", "ctype", CRITERION, { 0 } },
-    { "'tiling", "ctype", __CALL, { 119 } },
-    { "'floating", "ctype", __CALL, { 120 } },
-    { "']", "", __CALL, { 121 } },
+    { "'tiling", "ctype", __CALL, { 121 } },
+    { "'floating", "ctype", __CALL, { 122 } },
+    { "']", "", __CALL, { 123 } },
 };
 static cmdp_token tokens_MODENAME[2] = {
     { "'--pango_markup", "pango_markup", MODENAME, { 0 } },
-    { "word", "modename", __CALL, { 122 } },
+    { "word", "modename", __CALL, { 124 } },
 };
 static cmdp_token tokens_NO_FOCUS[1] = {
-    { "'[", "", __CALL, { 123 } },
+    { "'[", "", __CALL, { 125 } },
 };
 static cmdp_token tokens_BINDING[20] = {
     { "'--release", "release", BINDING, { 0 } },
@@ -497,17 +505,17 @@ static cmdp_token tokens_INITIAL[57] = {
     { "'client.placeholder", "colorclass", COLOR_BORDER, { 0 } },
 };
 static cmdp_token tokens_ASSIGN[1] = {
-    { "'[", "", __CALL, { 124 } },
+    { "'[", "", __CALL, { 126 } },
 };
 static cmdp_token tokens_BAR_ID[1] = {
-    { "word", "bar_id", __CALL, { 125 } },
+    { "word", "bar_id", __CALL, { 127 } },
 };
 static cmdp_token tokens_EXEC[2] = {
     { "'--no-startup-id", "no_startup_id", EXEC, { 0 } },
-    { "string", "command", __CALL, { 126 } },
+    { "string", "command", __CALL, { 128 } },
 };
 static cmdp_token tokens_FONT[1] = {
-    { "string", "font", __CALL, { 127 } },
+    { "string", "font", __CALL, { 129 } },
 };
 static cmdp_token tokens_GAPS[8] = {
     { "'inner", "scope", GAPS_WITH_SCOPE, { 0 } },
@@ -529,7 +537,7 @@ static cmdp_token tokens_MODE[8] = {
     { "'bind", "bindtype", MODE_BINDING, { 0 } },
     { "'}", "", INITIAL, { 0 } },
 };
-static cmdp_token tokens_BAR[28] = {
+static cmdp_token tokens_BAR[29] = {
     { "end", "", BAR, { 0 } },
     { "error", "", BAR, { 0 } },
     { "'#", "", BAR_IGNORE_LINE, { 0 } },
@@ -552,14 +560,15 @@ static cmdp_token tokens_BAR[28] = {
     { "'separator_symbol", "", BAR_SEPARATOR_SYMBOL, { 0 } },
     { "'binding_mode_indicator", "", BAR_BINDING_MODE_INDICATOR, { 0 } },
     { "'workspace_buttons", "", BAR_WORKSPACE_BUTTONS, { 0 } },
+    { "'workspace_min_width", "", BAR_WORKSPACE_MIN_WIDTH, { 0 } },
     { "'strip_workspace_numbers", "", BAR_STRIP_WORKSPACE_NUMBERS, { 0 } },
     { "'strip_workspace_name", "", BAR_STRIP_WORKSPACE_NAME, { 0 } },
     { "'verbose", "", BAR_VERBOSE, { 0 } },
     { "'height", "", BAR_HEIGHT, { 0 } },
     { "'colors", "", BAR_COLORS_BRACE, { 0 } },
-    { "'}", "", __CALL, { 128 } },
+    { "'}", "", __CALL, { 130 } },
 };
-static cmdp_token_ptr tokens[100] = {
+static cmdp_token_ptr tokens[102] = {
     { tokens_FORCE_DISPLAY_URGENCY_HINT_MS, 2 },
     { tokens_FLOATING_MAXIMUM_SIZE_HEIGHT, 1 },
     { tokens_FLOATING_MINIMUM_SIZE_HEIGHT, 1 },
@@ -567,12 +576,14 @@ static cmdp_token_ptr tokens[100] = {
     { tokens_FLOATING_MAXIMUM_SIZE_WIDTH, 1 },
     { tokens_FLOATING_MINIMUM_SIZE_WIDTH, 1 },
     { tokens_BAR_BINDING_MODE_INDICATOR, 1 },
+    { tokens_BAR_WORKSPACE_MIN_WIDTH_PX, 2 },
     { tokens_FOCUS_ON_WINDOW_ACTIVATION, 1 },
     { tokens_FORCE_DISPLAY_URGENCY_HINT, 1 },
     { tokens_BAR_STRIP_WORKSPACE_NAME, 1 },
     { tokens_DEFAULT_BORDER_PIXELS_PX, 2 },
     { tokens_WORKSPACE_BACK_AND_FORTH, 1 },
     { tokens_ASSIGN_WORKSPACE_NUMBER, 1 },
+    { tokens_BAR_WORKSPACE_MIN_WIDTH, 1 },
     { tokens_FLOATING_MAXIMUM_SIZE_X, 1 },
     { tokens_FLOATING_MINIMUM_SIZE_X, 1 },
     { tokens_POPUP_DURING_FULLSCREEN, 3 },
@@ -615,7 +626,7 @@ static cmdp_token_ptr tokens[100] = {
     { tokens_DISABLE_RANDR15, 1 },
     { tokens_GAPS_WITH_SCOPE, 1 },
     { tokens_DEFAULT_BORDER, 4 },
-    { tokens_FOCUS_WRAPPING, 13 },
+    { tokens_FOCUS_WRAPPING, 14 },
     { tokens_FORCE_XINERAMA, 1 },
     { tokens_ASSIGN_OUTPUT, 1 },
     { tokens_CRITERION_STR, 1 },
@@ -659,5 +670,5 @@ static cmdp_token_ptr tokens[100] = {
     { tokens_FONT, 1 },
     { tokens_GAPS, 8 },
     { tokens_MODE, 8 },
-    { tokens_BAR, 28 },
+    { tokens_BAR, 29 },
 };
