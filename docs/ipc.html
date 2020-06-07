@@ -1072,6 +1072,16 @@ sending a reply. Expect the socket to be shut down.</td>
 following properties:</p></div>
 <div class="dlist"><dl>
 <dt class="hdlist1">
+id (integer)
+</dt>
+<dd>
+<p>
+        The internal ID (actually a C pointer value) of this container. Do not
+        make any assumptions about it. You can use it to (re-)identify and
+        address containers when talking to i3.
+</p>
+</dd>
+<dt class="hdlist1">
 num (integer)
 </dt>
 <dd>
@@ -1404,7 +1414,18 @@ window_properties (map)
 </dt>
 <dd>
 <p>
-        X11 window properties title, instance, class, window_role and transient_for.
+        This optional field contains all available X11 window properties from the
+        following list: <strong>title</strong>, <strong>instance</strong>, <strong>class</strong>, <strong>window_role</strong> and <strong>transient_for</strong>.
+</p>
+</dd>
+<dt class="hdlist1">
+window_type (string)
+</dt>
+<dd>
+<p>
+        The window type (_NET_WM_WINDOW_TYPE). Possible values are undefined, normal,
+        dialog, utility, toolbar, splash, menu, dropdown_menu, popup_menu, tooltip and
+        notification.
 </p>
 </dd>
 <dt class="hdlist1">
@@ -1416,6 +1437,14 @@ urgent (bool)
         workspace) has the urgency hint set, directly or indirectly. All parent
         containers up until the workspace container will be marked urgent if they
         have at least one urgent child.
+</p>
+</dd>
+<dt class="hdlist1">
+marks (array of string)
+</dt>
+<dd>
+<p>
+        List of marks assigned to container
 </p>
 </dd>
 <dt class="hdlist1">
@@ -1435,6 +1464,19 @@ focus (array of integer)
         order. Traversing the tree by following the first entry in this array
         will result in eventually reaching the one node with <code>focused</code> set to
         true.
+</p>
+</dd>
+<dt class="hdlist1">
+fullscreen_mode (integer)
+</dt>
+<dd>
+<p>
+        Whether this container is in fullscreen state or not.
+    Possible values are
+        <code>0</code> (no fullscreen),
+        <code>1</code> (fullscreened on output) or
+        <code>2</code> (fullscreened globally).
+    Note that all workspaces are considered fullscreened on their respective output.
 </p>
 </dd>
 <dt class="hdlist1">
@@ -2635,7 +2677,7 @@ From here on out, send/receive all messages using the detected byte order.
 <div id="footer">
 <div id="footer-text">
 Last updated
- 2019-08-04 09:40:48 CEST
+ 2020-04-22 08:53:23 CEST
 </div>
 </div>
 </body>

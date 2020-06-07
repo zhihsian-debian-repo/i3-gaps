@@ -355,12 +355,28 @@ static void GENERATED_call(const int call_identifier, struct CommandResultIR *re
          case 44:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
+             cmd_focus_sibling(&current_match, result, get_string("direction"));
+#else
+           fprintf(stderr, "cmd_focus_sibling(%s)\n", get_string("direction"));
+#endif
+             break;
+         case 45:
+             result->next_state = INITIAL;
+#ifndef TEST_PARSER
+             cmd_focus_direction(&current_match, result, get_string("direction"));
+#else
+           fprintf(stderr, "cmd_focus_direction(%s)\n", get_string("direction"));
+#endif
+             break;
+         case 46:
+             result->next_state = INITIAL;
+#ifndef TEST_PARSER
              cmd_fullscreen(&current_match, result, get_string("action"), "output");
 #else
            fprintf(stderr, "cmd_fullscreen(%s, %s)\n", get_string("action"), "output");
 #endif
              break;
-         case 45:
+         case 47:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
              cmd_scratchpad_show(&current_match, result);
@@ -368,28 +384,12 @@ static void GENERATED_call(const int call_identifier, struct CommandResultIR *re
            fprintf(stderr, "cmd_scratchpad_show()\n");
 #endif
              break;
-         case 46:
+         case 48:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
              cmd_resize(&current_match, result, get_string("way"), get_string("direction"), 10, 10);
 #else
            fprintf(stderr, "cmd_resize(%s, %s, %d, %d)\n", get_string("way"), get_string("direction"), 10, 10);
-#endif
-             break;
-         case 47:
-             result->next_state = INITIAL;
-#ifndef TEST_PARSER
-             cmd_workspace(&current_match, result, get_string("direction"));
-#else
-           fprintf(stderr, "cmd_workspace(%s)\n", get_string("direction"));
-#endif
-             break;
-         case 48:
-             result->next_state = INITIAL;
-#ifndef TEST_PARSER
-             cmd_workspace(&current_match, result, get_string("direction"));
-#else
-           fprintf(stderr, "cmd_workspace(%s)\n", get_string("direction"));
 #endif
              break;
          case 49:
@@ -411,12 +411,28 @@ static void GENERATED_call(const int call_identifier, struct CommandResultIR *re
          case 51:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
+             cmd_workspace(&current_match, result, get_string("direction"));
+#else
+           fprintf(stderr, "cmd_workspace(%s)\n", get_string("direction"));
+#endif
+             break;
+         case 52:
+             result->next_state = INITIAL;
+#ifndef TEST_PARSER
+             cmd_workspace(&current_match, result, get_string("direction"));
+#else
+           fprintf(stderr, "cmd_workspace(%s)\n", get_string("direction"));
+#endif
+             break;
+         case 53:
+             result->next_state = INITIAL;
+#ifndef TEST_PARSER
              cmd_workspace_back_and_forth(&current_match, result);
 #else
            fprintf(stderr, "cmd_workspace_back_and_forth()\n");
 #endif
              break;
-         case 52:
+         case 54:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
              cmd_workspace_name(&current_match, result, get_string("workspace"), get_string("no_auto_back_and_forth"));
@@ -424,7 +440,7 @@ static void GENERATED_call(const int call_identifier, struct CommandResultIR *re
            fprintf(stderr, "cmd_workspace_name(%s, %s)\n", get_string("workspace"), get_string("no_auto_back_and_forth"));
 #endif
              break;
-         case 53:
+         case 55:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
              cmd_bar(&current_match, result, get_string("bar_type"), get_string("bar_value"), get_string("bar_id"));
@@ -432,44 +448,28 @@ static void GENERATED_call(const int call_identifier, struct CommandResultIR *re
            fprintf(stderr, "cmd_bar(%s, %s, %s)\n", get_string("bar_type"), get_string("bar_value"), get_string("bar_id"));
 #endif
              break;
-         case 54:
-             result->next_state = CRITERIA;
-#ifndef TEST_PARSER
-             cmd_criteria_add(&current_match, result, get_string("ctype"), NULL);
-#else
-           fprintf(stderr, "cmd_criteria_add(%s, NULL)\n", get_string("ctype"));
-#endif
-             break;
-         case 55:
-             result->next_state = CRITERIA;
-#ifndef TEST_PARSER
-             cmd_criteria_add(&current_match, result, get_string("ctype"), NULL);
-#else
-           fprintf(stderr, "cmd_criteria_add(%s, NULL)\n", get_string("ctype"));
-#endif
-             break;
          case 56:
-             result->next_state = INITIAL;
+             result->next_state = CRITERIA;
 #ifndef TEST_PARSER
-             cmd_criteria_match_windows(&current_match, result);
+             cmd_criteria_add(&current_match, result, get_string("ctype"), NULL);
 #else
-           fprintf(stderr, "cmd_criteria_match_windows()\n");
+           fprintf(stderr, "cmd_criteria_add(%s, NULL)\n", get_string("ctype"));
 #endif
              break;
          case 57:
-             result->next_state = INITIAL;
+             result->next_state = CRITERIA;
 #ifndef TEST_PARSER
-             cmd_debuglog(&current_match, result, get_string("argument"));
+             cmd_criteria_add(&current_match, result, get_string("ctype"), NULL);
 #else
-           fprintf(stderr, "cmd_debuglog(%s)\n", get_string("argument"));
+           fprintf(stderr, "cmd_criteria_add(%s, NULL)\n", get_string("ctype"));
 #endif
              break;
          case 58:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
-             cmd_debuglog(&current_match, result, get_string("argument"));
+             cmd_criteria_match_windows(&current_match, result);
 #else
-           fprintf(stderr, "cmd_debuglog(%s)\n", get_string("argument"));
+           fprintf(stderr, "cmd_criteria_match_windows()\n");
 #endif
              break;
          case 59:
@@ -483,17 +483,17 @@ static void GENERATED_call(const int call_identifier, struct CommandResultIR *re
          case 60:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
-             cmd_floating(&current_match, result, get_string("floating"));
+             cmd_debuglog(&current_match, result, get_string("argument"));
 #else
-           fprintf(stderr, "cmd_floating(%s)\n", get_string("floating"));
+           fprintf(stderr, "cmd_debuglog(%s)\n", get_string("argument"));
 #endif
              break;
          case 61:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
-             cmd_floating(&current_match, result, get_string("floating"));
+             cmd_debuglog(&current_match, result, get_string("argument"));
 #else
-           fprintf(stderr, "cmd_floating(%s)\n", get_string("floating"));
+           fprintf(stderr, "cmd_debuglog(%s)\n", get_string("argument"));
 #endif
              break;
          case 62:
@@ -505,6 +505,22 @@ static void GENERATED_call(const int call_identifier, struct CommandResultIR *re
 #endif
              break;
          case 63:
+             result->next_state = INITIAL;
+#ifndef TEST_PARSER
+             cmd_floating(&current_match, result, get_string("floating"));
+#else
+           fprintf(stderr, "cmd_floating(%s)\n", get_string("floating"));
+#endif
+             break;
+         case 64:
+             result->next_state = INITIAL;
+#ifndef TEST_PARSER
+             cmd_floating(&current_match, result, get_string("floating"));
+#else
+           fprintf(stderr, "cmd_floating(%s)\n", get_string("floating"));
+#endif
+             break;
+         case 65:
              result->next_state = CRITERIA;
 #ifndef TEST_PARSER
              cmd_criteria_init(&current_match, result);
@@ -512,7 +528,7 @@ static void GENERATED_call(const int call_identifier, struct CommandResultIR *re
            fprintf(stderr, "cmd_criteria_init()\n");
 #endif
              break;
-         case 64:
+         case 66:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
              cmd_exit(&current_match, result);
@@ -520,7 +536,7 @@ static void GENERATED_call(const int call_identifier, struct CommandResultIR *re
            fprintf(stderr, "cmd_exit()\n");
 #endif
              break;
-         case 65:
+         case 67:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
              cmd_restart(&current_match, result);
@@ -528,7 +544,7 @@ static void GENERATED_call(const int call_identifier, struct CommandResultIR *re
            fprintf(stderr, "cmd_restart()\n");
 #endif
              break;
-         case 66:
+         case 68:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
              cmd_reload(&current_match, result);
@@ -536,7 +552,7 @@ static void GENERATED_call(const int call_identifier, struct CommandResultIR *re
            fprintf(stderr, "cmd_reload()\n");
 #endif
              break;
-         case 67:
+         case 69:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
              cmd_open(&current_match, result);
@@ -544,7 +560,7 @@ static void GENERATED_call(const int call_identifier, struct CommandResultIR *re
            fprintf(stderr, "cmd_open()\n");
 #endif
              break;
-         case 68:
+         case 70:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
              cmd_border(&current_match, result, get_string("border_style"), 0);
@@ -552,28 +568,12 @@ static void GENERATED_call(const int call_identifier, struct CommandResultIR *re
            fprintf(stderr, "cmd_border(%s, %d)\n", get_string("border_style"), 0);
 #endif
              break;
-         case 69:
+         case 71:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
              cmd_border(&current_match, result, "pixel", 1);
 #else
            fprintf(stderr, "cmd_border(%s, %d)\n", "pixel", 1);
-#endif
-             break;
-         case 70:
-             result->next_state = INITIAL;
-#ifndef TEST_PARSER
-             cmd_layout(&current_match, result, get_string("layout_mode"));
-#else
-           fprintf(stderr, "cmd_layout(%s)\n", get_string("layout_mode"));
-#endif
-             break;
-         case 71:
-             result->next_state = INITIAL;
-#ifndef TEST_PARSER
-             cmd_layout(&current_match, result, get_string("layout_mode"));
-#else
-           fprintf(stderr, "cmd_layout(%s)\n", get_string("layout_mode"));
 #endif
              break;
          case 72:
@@ -611,25 +611,25 @@ static void GENERATED_call(const int call_identifier, struct CommandResultIR *re
          case 76:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
-             cmd_shmlog(&current_match, result, get_string("argument"));
+             cmd_layout(&current_match, result, get_string("layout_mode"));
 #else
-           fprintf(stderr, "cmd_shmlog(%s)\n", get_string("argument"));
+           fprintf(stderr, "cmd_layout(%s)\n", get_string("layout_mode"));
 #endif
              break;
          case 77:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
-             cmd_sticky(&current_match, result, get_string("action"));
+             cmd_layout(&current_match, result, get_string("layout_mode"));
 #else
-           fprintf(stderr, "cmd_sticky(%s)\n", get_string("action"));
+           fprintf(stderr, "cmd_layout(%s)\n", get_string("layout_mode"));
 #endif
              break;
          case 78:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
-             cmd_sticky(&current_match, result, get_string("action"));
+             cmd_shmlog(&current_match, result, get_string("argument"));
 #else
-           fprintf(stderr, "cmd_sticky(%s)\n", get_string("action"));
+           fprintf(stderr, "cmd_shmlog(%s)\n", get_string("argument"));
 #endif
              break;
          case 79:
@@ -643,33 +643,33 @@ static void GENERATED_call(const int call_identifier, struct CommandResultIR *re
          case 80:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
-             cmd_unmark(&current_match, result, get_string("mark"));
+             cmd_sticky(&current_match, result, get_string("action"));
 #else
-           fprintf(stderr, "cmd_unmark(%s)\n", get_string("mark"));
+           fprintf(stderr, "cmd_sticky(%s)\n", get_string("action"));
 #endif
              break;
          case 81:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
-             cmd_unmark(&current_match, result, get_string("mark"));
+             cmd_sticky(&current_match, result, get_string("action"));
 #else
-           fprintf(stderr, "cmd_unmark(%s)\n", get_string("mark"));
+           fprintf(stderr, "cmd_sticky(%s)\n", get_string("action"));
 #endif
              break;
          case 82:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
-             cmd_focus_direction(&current_match, result, get_string("direction"));
+             cmd_unmark(&current_match, result, get_string("mark"));
 #else
-           fprintf(stderr, "cmd_focus_direction(%s)\n", get_string("direction"));
+           fprintf(stderr, "cmd_unmark(%s)\n", get_string("mark"));
 #endif
              break;
          case 83:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
-             cmd_focus_direction(&current_match, result, get_string("direction"));
+             cmd_unmark(&current_match, result, get_string("mark"));
 #else
-           fprintf(stderr, "cmd_focus_direction(%s)\n", get_string("direction"));
+           fprintf(stderr, "cmd_unmark(%s)\n", get_string("mark"));
 #endif
              break;
          case 84:
@@ -691,17 +691,17 @@ static void GENERATED_call(const int call_identifier, struct CommandResultIR *re
          case 86:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
-             cmd_focus_window_mode(&current_match, result, get_string("window_mode"));
+             cmd_focus_direction(&current_match, result, get_string("direction"));
 #else
-           fprintf(stderr, "cmd_focus_window_mode(%s)\n", get_string("window_mode"));
+           fprintf(stderr, "cmd_focus_direction(%s)\n", get_string("direction"));
 #endif
              break;
          case 87:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
-             cmd_focus_window_mode(&current_match, result, get_string("window_mode"));
+             cmd_focus_direction(&current_match, result, get_string("direction"));
 #else
-           fprintf(stderr, "cmd_focus_window_mode(%s)\n", get_string("window_mode"));
+           fprintf(stderr, "cmd_focus_direction(%s)\n", get_string("direction"));
 #endif
              break;
          case 88:
@@ -715,41 +715,41 @@ static void GENERATED_call(const int call_identifier, struct CommandResultIR *re
          case 89:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
-             cmd_focus_level(&current_match, result, get_string("level"));
+             cmd_focus_window_mode(&current_match, result, get_string("window_mode"));
 #else
-           fprintf(stderr, "cmd_focus_level(%s)\n", get_string("level"));
+           fprintf(stderr, "cmd_focus_window_mode(%s)\n", get_string("window_mode"));
 #endif
              break;
          case 90:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
-             cmd_focus_level(&current_match, result, get_string("level"));
+             cmd_focus_window_mode(&current_match, result, get_string("window_mode"));
 #else
-           fprintf(stderr, "cmd_focus_level(%s)\n", get_string("level"));
+           fprintf(stderr, "cmd_focus_window_mode(%s)\n", get_string("window_mode"));
 #endif
              break;
          case 91:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
-             cmd_focus(&current_match, result);
+             cmd_focus_level(&current_match, result, get_string("level"));
 #else
-           fprintf(stderr, "cmd_focus()\n");
+           fprintf(stderr, "cmd_focus_level(%s)\n", get_string("level"));
 #endif
              break;
          case 92:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
-             cmd_split(&current_match, result, get_string("direction"));
+             cmd_focus_level(&current_match, result, get_string("level"));
 #else
-           fprintf(stderr, "cmd_split(%s)\n", get_string("direction"));
+           fprintf(stderr, "cmd_focus_level(%s)\n", get_string("level"));
 #endif
              break;
          case 93:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
-             cmd_split(&current_match, result, get_string("direction"));
+             cmd_focus(&current_match, result);
 #else
-           fprintf(stderr, "cmd_split(%s)\n", get_string("direction"));
+           fprintf(stderr, "cmd_focus()\n");
 #endif
              break;
          case 94:
@@ -787,25 +787,25 @@ static void GENERATED_call(const int call_identifier, struct CommandResultIR *re
          case 98:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
-             cmd_exec(&current_match, result, get_string("nosn"), get_string("command"));
+             cmd_split(&current_match, result, get_string("direction"));
 #else
-           fprintf(stderr, "cmd_exec(%s, %s)\n", get_string("nosn"), get_string("command"));
+           fprintf(stderr, "cmd_split(%s)\n", get_string("direction"));
 #endif
              break;
          case 99:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
-             cmd_kill(&current_match, result, get_string("kill_mode"));
+             cmd_split(&current_match, result, get_string("direction"));
 #else
-           fprintf(stderr, "cmd_kill(%s)\n", get_string("kill_mode"));
+           fprintf(stderr, "cmd_split(%s)\n", get_string("direction"));
 #endif
              break;
          case 100:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
-             cmd_kill(&current_match, result, get_string("kill_mode"));
+             cmd_exec(&current_match, result, get_string("nosn"), get_string("command"));
 #else
-           fprintf(stderr, "cmd_kill(%s)\n", get_string("kill_mode"));
+           fprintf(stderr, "cmd_exec(%s, %s)\n", get_string("nosn"), get_string("command"));
 #endif
              break;
          case 101:
@@ -819,12 +819,28 @@ static void GENERATED_call(const int call_identifier, struct CommandResultIR *re
          case 102:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
+             cmd_kill(&current_match, result, get_string("kill_mode"));
+#else
+           fprintf(stderr, "cmd_kill(%s)\n", get_string("kill_mode"));
+#endif
+             break;
+         case 103:
+             result->next_state = INITIAL;
+#ifndef TEST_PARSER
+             cmd_kill(&current_match, result, get_string("kill_mode"));
+#else
+           fprintf(stderr, "cmd_kill(%s)\n", get_string("kill_mode"));
+#endif
+             break;
+         case 104:
+             result->next_state = INITIAL;
+#ifndef TEST_PARSER
              cmd_mark(&current_match, result, get_string("mark"), get_string("mode"), get_string("toggle"));
 #else
            fprintf(stderr, "cmd_mark(%s, %s, %s)\n", get_string("mark"), get_string("mode"), get_string("toggle"));
 #endif
              break;
-         case 103:
+         case 105:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
              cmd_mode(&current_match, result, get_string("mode"));
@@ -832,7 +848,7 @@ static void GENERATED_call(const int call_identifier, struct CommandResultIR *re
            fprintf(stderr, "cmd_mode(%s)\n", get_string("mode"));
 #endif
              break;
-         case 104:
+         case 106:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
              cmd_move_scratchpad(&current_match, result);
@@ -840,7 +856,7 @@ static void GENERATED_call(const int call_identifier, struct CommandResultIR *re
            fprintf(stderr, "cmd_move_scratchpad()\n");
 #endif
              break;
-         case 105:
+         case 107:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
              cmd_nop(&current_match, result, get_string("comment"));
@@ -848,7 +864,7 @@ static void GENERATED_call(const int call_identifier, struct CommandResultIR *re
            fprintf(stderr, "cmd_nop(%s)\n", get_string("comment"));
 #endif
              break;
-         case 106:
+         case 108:
              result->next_state = INITIAL;
 #ifndef TEST_PARSER
              cmd_nop(&current_match, result, NULL);

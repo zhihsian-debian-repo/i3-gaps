@@ -153,8 +153,12 @@ static cmdp_token tokens_RESIZE_WIDTH[5] = {
 static cmdp_token tokens_TITLE_FORMAT[1] = {
     { "string", "format", __CALL, { 43 } },
 };
+static cmdp_token tokens_FOCUS_AUTO[2] = {
+    { "'sibling", "", __CALL, { 44 } },
+    { "end", "", __CALL, { 45 } },
+};
 static cmdp_token tokens_FULLSCREEN[4] = {
-    { "'disable", "action", __CALL, { 44 } },
+    { "'disable", "action", __CALL, { 46 } },
     { "'enable", "action", FULLSCREEN_MODE, { 0 } },
     { "'toggle", "action", FULLSCREEN_MODE, { 0 } },
     { "'", "action", FULLSCREEN_COMPAT, { 0 } },
@@ -165,24 +169,24 @@ static cmdp_token tokens_RESIZE_SET[3] = {
     { "number", "width", RESIZE_WIDTH, { 0 } },
 };
 static cmdp_token tokens_SCRATCHPAD[1] = {
-    { "'show", "", __CALL, { 45 } },
+    { "'show", "", __CALL, { 47 } },
 };
 static cmdp_token tokens_CRITERION[1] = {
     { "'=", "", CRITERION_STR, { 0 } },
 };
 static cmdp_token tokens_RESIZE_PX[2] = {
     { "number", "resize_px", RESIZE_TILING, { 0 } },
-    { "end", "", __CALL, { 46 } },
+    { "end", "", __CALL, { 48 } },
 };
 static cmdp_token tokens_WORKSPACE[8] = {
     { "'--no-auto-back-and-forth", "no_auto_back_and_forth", WORKSPACE, { 0 } },
-    { "'next_on_output", "direction", __CALL, { 47 } },
-    { "'prev_on_output", "direction", __CALL, { 48 } },
-    { "'next", "direction", __CALL, { 49 } },
-    { "'prev", "direction", __CALL, { 50 } },
-    { "'back_and_forth", "", __CALL, { 51 } },
+    { "'next_on_output", "direction", __CALL, { 49 } },
+    { "'prev_on_output", "direction", __CALL, { 50 } },
+    { "'next", "direction", __CALL, { 51 } },
+    { "'prev", "direction", __CALL, { 52 } },
+    { "'back_and_forth", "", __CALL, { 53 } },
     { "'number", "", WORKSPACE_NUMBER, { 0 } },
-    { "string", "workspace", __CALL, { 52 } },
+    { "string", "workspace", __CALL, { 54 } },
 };
 static cmdp_token tokens_BAR_MODE[4] = {
     { "'dock", "bar_value", BAR_W_ID, { 0 } },
@@ -192,7 +196,7 @@ static cmdp_token tokens_BAR_MODE[4] = {
 };
 static cmdp_token tokens_BAR_W_ID[2] = {
     { "word", "bar_id", BAR_W_ID, { 0 } },
-    { "end", "", __CALL, { 53 } },
+    { "end", "", __CALL, { 55 } },
 };
 static cmdp_token tokens_CRITERIA[13] = {
     { "'class", "ctype", CRITERION, { 0 } },
@@ -205,28 +209,28 @@ static cmdp_token tokens_CRITERIA[13] = {
     { "'title", "ctype", CRITERION, { 0 } },
     { "'urgent", "ctype", CRITERION, { 0 } },
     { "'workspace", "ctype", CRITERION, { 0 } },
-    { "'tiling", "ctype", __CALL, { 54 } },
-    { "'floating", "ctype", __CALL, { 55 } },
-    { "']", "", __CALL, { 56 } },
+    { "'tiling", "ctype", __CALL, { 56 } },
+    { "'floating", "ctype", __CALL, { 57 } },
+    { "']", "", __CALL, { 58 } },
 };
 static cmdp_token tokens_DEBUGLOG[3] = {
-    { "'toggle", "argument", __CALL, { 57 } },
-    { "'on", "argument", __CALL, { 58 } },
-    { "'off", "argument", __CALL, { 59 } },
+    { "'toggle", "argument", __CALL, { 59 } },
+    { "'on", "argument", __CALL, { 60 } },
+    { "'off", "argument", __CALL, { 61 } },
 };
 static cmdp_token tokens_FLOATING[3] = {
-    { "'enable", "floating", __CALL, { 60 } },
-    { "'disable", "floating", __CALL, { 61 } },
-    { "'toggle", "floating", __CALL, { 62 } },
+    { "'enable", "floating", __CALL, { 62 } },
+    { "'disable", "floating", __CALL, { 63 } },
+    { "'toggle", "floating", __CALL, { 64 } },
 };
 static cmdp_token tokens_INITIAL[31] = {
     { "end", "", INITIAL, { 0 } },
-    { "'[", "", __CALL, { 63 } },
+    { "'[", "", __CALL, { 65 } },
     { "'move", "", MOVE, { 0 } },
     { "'exec", "", EXEC, { 0 } },
-    { "'exit", "", __CALL, { 64 } },
-    { "'restart", "", __CALL, { 65 } },
-    { "'reload", "", __CALL, { 66 } },
+    { "'exit", "", __CALL, { 66 } },
+    { "'restart", "", __CALL, { 67 } },
+    { "'reload", "", __CALL, { 68 } },
     { "'shmlog", "", SHMLOG, { 0 } },
     { "'debuglog", "", DEBUGLOG, { 0 } },
     { "'border", "", BORDER, { 0 } },
@@ -235,7 +239,7 @@ static cmdp_token tokens_INITIAL[31] = {
     { "'workspace", "", WORKSPACE, { 0 } },
     { "'focus", "", FOCUS, { 0 } },
     { "'kill", "", KILL, { 0 } },
-    { "'open", "", __CALL, { 67 } },
+    { "'open", "", __CALL, { 69 } },
     { "'fullscreen", "", FULLSCREEN, { 0 } },
     { "'sticky", "", STICKY, { 0 } },
     { "'split", "", SPLIT, { 0 } },
@@ -256,16 +260,16 @@ static cmdp_token tokens_BORDER[5] = {
     { "'normal", "border_style", BORDER_WIDTH, { 0 } },
     { "'pixel", "border_style", BORDER_WIDTH, { 0 } },
     { "'toggle", "border_style", BORDER_WIDTH, { 0 } },
-    { "'none", "border_style", __CALL, { 68 } },
-    { "'1pixel", "", __CALL, { 69 } },
+    { "'none", "border_style", __CALL, { 70 } },
+    { "'1pixel", "", __CALL, { 71 } },
 };
 static cmdp_token tokens_LAYOUT[7] = {
-    { "'default", "layout_mode", __CALL, { 70 } },
-    { "'stacked", "layout_mode", __CALL, { 71 } },
-    { "'stacking", "layout_mode", __CALL, { 72 } },
-    { "'tabbed", "layout_mode", __CALL, { 73 } },
-    { "'splitv", "layout_mode", __CALL, { 74 } },
-    { "'splith", "layout_mode", __CALL, { 75 } },
+    { "'default", "layout_mode", __CALL, { 72 } },
+    { "'stacked", "layout_mode", __CALL, { 73 } },
+    { "'stacking", "layout_mode", __CALL, { 74 } },
+    { "'tabbed", "layout_mode", __CALL, { 75 } },
+    { "'splitv", "layout_mode", __CALL, { 76 } },
+    { "'splith", "layout_mode", __CALL, { 77 } },
     { "'toggle", "", LAYOUT_TOGGLE, { 0 } },
 };
 static cmdp_token tokens_RENAME[1] = {
@@ -277,41 +281,43 @@ static cmdp_token tokens_RESIZE[3] = {
     { "'set", "set", RESIZE_SET, { 0 } },
 };
 static cmdp_token tokens_SHMLOG[1] = {
-    { "string", "argument", __CALL, { 76 } },
+    { "string", "argument", __CALL, { 78 } },
 };
 static cmdp_token tokens_STICKY[3] = {
-    { "'enable", "action", __CALL, { 77 } },
-    { "'disable", "action", __CALL, { 78 } },
-    { "'toggle", "action", __CALL, { 79 } },
+    { "'enable", "action", __CALL, { 79 } },
+    { "'disable", "action", __CALL, { 80 } },
+    { "'toggle", "action", __CALL, { 81 } },
 };
 static cmdp_token tokens_UNMARK[2] = {
-    { "end", "", __CALL, { 80 } },
-    { "string", "mark", __CALL, { 81 } },
+    { "end", "", __CALL, { 82 } },
+    { "string", "mark", __CALL, { 83 } },
 };
-static cmdp_token tokens_FOCUS[11] = {
-    { "'left", "direction", __CALL, { 82 } },
-    { "'right", "direction", __CALL, { 83 } },
-    { "'up", "direction", __CALL, { 84 } },
-    { "'down", "direction", __CALL, { 85 } },
+static cmdp_token tokens_FOCUS[13] = {
+    { "'left", "direction", __CALL, { 84 } },
+    { "'right", "direction", __CALL, { 85 } },
+    { "'up", "direction", __CALL, { 86 } },
+    { "'down", "direction", __CALL, { 87 } },
+    { "'prev", "direction", FOCUS_AUTO, { 0 } },
+    { "'next", "direction", FOCUS_AUTO, { 0 } },
     { "'output", "", FOCUS_OUTPUT, { 0 } },
-    { "'tiling", "window_mode", __CALL, { 86 } },
-    { "'floating", "window_mode", __CALL, { 87 } },
-    { "'mode_toggle", "window_mode", __CALL, { 88 } },
-    { "'parent", "level", __CALL, { 89 } },
-    { "'child", "level", __CALL, { 90 } },
-    { "end", "", __CALL, { 91 } },
+    { "'tiling", "window_mode", __CALL, { 88 } },
+    { "'floating", "window_mode", __CALL, { 89 } },
+    { "'mode_toggle", "window_mode", __CALL, { 90 } },
+    { "'parent", "level", __CALL, { 91 } },
+    { "'child", "level", __CALL, { 92 } },
+    { "end", "", __CALL, { 93 } },
 };
 static cmdp_token tokens_SPLIT[6] = {
-    { "'horizontal", "direction", __CALL, { 92 } },
-    { "'vertical", "direction", __CALL, { 93 } },
-    { "'toggle", "direction", __CALL, { 94 } },
-    { "'v", "direction", __CALL, { 95 } },
-    { "'h", "direction", __CALL, { 96 } },
-    { "'t", "direction", __CALL, { 97 } },
+    { "'horizontal", "direction", __CALL, { 94 } },
+    { "'vertical", "direction", __CALL, { 95 } },
+    { "'toggle", "direction", __CALL, { 96 } },
+    { "'v", "direction", __CALL, { 97 } },
+    { "'h", "direction", __CALL, { 98 } },
+    { "'t", "direction", __CALL, { 99 } },
 };
 static cmdp_token tokens_EXEC[2] = {
     { "'--no-startup-id", "nosn", EXEC, { 0 } },
-    { "string", "command", __CALL, { 98 } },
+    { "string", "command", __CALL, { 100 } },
 };
 static cmdp_token tokens_GAPS[8] = {
     { "'inner", "type", GAPS_WITH_TYPE, { 0 } },
@@ -324,18 +330,18 @@ static cmdp_token tokens_GAPS[8] = {
     { "'left", "type", GAPS_WITH_TYPE, { 0 } },
 };
 static cmdp_token tokens_KILL[3] = {
-    { "'window", "kill_mode", __CALL, { 99 } },
-    { "'client", "kill_mode", __CALL, { 100 } },
-    { "end", "", __CALL, { 101 } },
+    { "'window", "kill_mode", __CALL, { 101 } },
+    { "'client", "kill_mode", __CALL, { 102 } },
+    { "end", "", __CALL, { 103 } },
 };
 static cmdp_token tokens_MARK[4] = {
     { "'--add", "mode", MARK, { 0 } },
     { "'--replace", "mode", MARK, { 0 } },
     { "'--toggle", "toggle", MARK, { 0 } },
-    { "string", "mark", __CALL, { 102 } },
+    { "string", "mark", __CALL, { 104 } },
 };
 static cmdp_token tokens_MODE[1] = {
-    { "string", "mode", __CALL, { 103 } },
+    { "string", "mode", __CALL, { 105 } },
 };
 static cmdp_token tokens_MOVE[14] = {
     { "'window", "", MOVE, { 0 } },
@@ -345,7 +351,7 @@ static cmdp_token tokens_MOVE[14] = {
     { "'workspace", "", MOVE_WORKSPACE, { 0 } },
     { "'output", "", MOVE_TO_OUTPUT, { 0 } },
     { "'mark", "", MOVE_TO_MARK, { 0 } },
-    { "'scratchpad", "", __CALL, { 104 } },
+    { "'scratchpad", "", __CALL, { 106 } },
     { "'left", "direction", MOVE_DIRECTION, { 0 } },
     { "'right", "direction", MOVE_DIRECTION, { 0 } },
     { "'up", "direction", MOVE_DIRECTION, { 0 } },
@@ -365,10 +371,10 @@ static cmdp_token tokens_BAR[2] = {
     { "'mode", "bar_type", BAR_MODE, { 0 } },
 };
 static cmdp_token tokens_NOP[2] = {
-    { "string", "comment", __CALL, { 105 } },
-    { "end", "", __CALL, { 106 } },
+    { "string", "comment", __CALL, { 107 } },
+    { "end", "", __CALL, { 108 } },
 };
-static cmdp_token_ptr tokens[67] = {
+static cmdp_token_ptr tokens[68] = {
     { tokens_RENAME_WORKSPACE_LIKELY_TO_NEW_NAME, 2 },
     { tokens_RENAME_WORKSPACE_TO_NEW_NAME, 1 },
     { tokens_RENAME_WORKSPACE_LIKELY_TO, 2 },
@@ -406,6 +412,7 @@ static cmdp_token_ptr tokens[67] = {
     { tokens_MOVE_TO_MARK, 1 },
     { tokens_RESIZE_WIDTH, 5 },
     { tokens_TITLE_FORMAT, 1 },
+    { tokens_FOCUS_AUTO, 2 },
     { tokens_FULLSCREEN, 4 },
     { tokens_RESIZE_SET, 3 },
     { tokens_SCRATCHPAD, 1 },
@@ -425,7 +432,7 @@ static cmdp_token_ptr tokens[67] = {
     { tokens_SHMLOG, 1 },
     { tokens_STICKY, 3 },
     { tokens_UNMARK, 2 },
-    { tokens_FOCUS, 11 },
+    { tokens_FOCUS, 13 },
     { tokens_SPLIT, 6 },
     { tokens_EXEC, 2 },
     { tokens_GAPS, 8 },
